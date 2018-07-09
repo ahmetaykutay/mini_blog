@@ -1,0 +1,28 @@
+{
+  "name": "mini_blog",
+  "version": "1.0.0",
+  "description": "mini blog for php practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmetaykutay/mini_blog.git"
+  },
+  "author": "ahmet aykut ay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmetaykutay/mini_blog/issues"
+  },
+  "homepage": "https://github.com/ahmetaykutay/mini_blog#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

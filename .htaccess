@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# if request if not a directory or file
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# skip rule
+RewriteCond $1 !^(config|core|robots\.txt|public)
+
+RewriteRule ^(.+)$ index.php/$1 [L]
