@@ -1,7 +1,8 @@
-const webpack = require("webpack");
+const webpack = require("webpack")
 const path = require('path')
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: "./src/js/app.js",
@@ -42,16 +43,14 @@ module.exports = {
   ],
   devtool: "source-map",
   devServer: {
-    proxy: {
-      '/': {
-        target: {
-          host: "localhost",
-          protocol: "http:",
-          port: 8888
-        },
-        changeOrigin: true,
-        secure: false
-      }
-    }
+    contentBase: path.join(__dirname, 'public'),
+    publicPath: '/public/',
+    compress: true,
+    port: 8888,
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin()
+    ]
   }
 }

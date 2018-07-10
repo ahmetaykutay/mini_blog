@@ -8,7 +8,7 @@
   <!-- <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" /> -->
 
   <!-- for development -->
-  <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:8080/public/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:8888/public/css/main.css" />
 
 </head>
 <body>
