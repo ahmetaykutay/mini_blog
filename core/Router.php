@@ -4,18 +4,21 @@ namespace Core;
 
 class Router
 {
-  public static function route($url)
+  /**
+   * splits uri into an array,
+   * first index is controller class name
+   * second index is method to call (if there isn't call index method) 
+   * send rest of the array as arguments to the method uri[1](uri[2], uri[3], ...)
+   */
+  public static function route($uri)
   {
     // get controller name
-    $controller_name = (isset($url[0]) && $url[0] !== '') ? ucwords($url[0]) : DEFAULT_CONTROLLER;
-    array_shift($url);
+    $controller_name = (isset($uri[0]) && $uri[0] !== '') ? ucwords($uri[0]) : DEFAULT_CONTROLLER;
+    array_shift($uri);
 
     // get method of the controller to call
-    $action = (isset($url[0]) && $url[0] !== '') ? $url[0] : 'index';
-    array_shift($url);
-    
-    // get params to pass to the method
-    $queryParams = $url;
+    $action = (isset($uri[0]) && $uri[0] !== '') ? $uri[0] : 'index';
+    array_shift($uri);
 
     // get controller
     $controller = 'App\Controller\\' . $controller_name;
@@ -24,7 +27,7 @@ class Router
     // instantiate Controller if exists, otherwise give 404 error
     if (method_exists($controller, $action)) {
       $dispatch = new $controller();
-      call_user_func_array([$dispatch, $action], $queryParams);
+      call_user_func_array([$dispatch, $action], $uri);
     } else {
       echo '404 Page not found';
     }

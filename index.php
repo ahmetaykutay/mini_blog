@@ -9,7 +9,7 @@ define('ROOT', dirname(__FILE__));
  * get url as an array
  * @global
  */
-$url = isset($_SERVER['PATH_INFO']) ? explode('/', trim($_SERVER['PATH_INFO'], '/')) : [];
+$uri = isset($_SERVER['PATH_INFO']) ? explode('/', trim($_SERVER['PATH_INFO'], '/')) : [];
 
 // bootstrap app
 require_once ROOT . DS . 'core' . DS . 'bootstrap.php';

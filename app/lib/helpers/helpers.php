@@ -1,7 +1,7 @@
 <?php
 
 /**
- * dump and die
+ * @description dump and die
  */
 function dnd($data)
 {

@@ -1,3 +1,21 @@
 @import './bootstrap';
 
+form.add-article{
+  width: 70%;
+  margin: 0 auto;
+  textarea{
+    resize: none;
+    min-height: 300px;
+  }
+  [type='submit']{
+    width: 90px;
+  }
+}
 
+.article{
+  width: 70%;
+  margin: 0 auto;
+  h1, .body{
+    width: 100%;
+  }
+}

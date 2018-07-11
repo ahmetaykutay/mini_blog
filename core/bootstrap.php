@@ -15,4 +15,4 @@ if (DEBUG) {
 }
 
 // Route the request
-Core\Router::route($url);
+Core\Router::route($uri);

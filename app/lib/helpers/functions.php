@@ -3,15 +3,6 @@
 require_once ROOT . DS . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'helpers.php';
 
 
-/**
- * load view from views folder
- */
-function load_view($name)
-{
-  include ROOT . DS . 'views' . DS . $name . '.php';
-}
-
-
 function get_pdo()
 {
   try {
@@ -21,5 +12,21 @@ function get_pdo()
     return $pdo;
   } catch (Exception $e) {
     echo $e->getMessage();
+  }
+}
+
+/**
+ * shorten given string if it exides the limit
+ * @param String repl
+ */
+function shorten_text($string, $repl, $limit) 
+{
+  if(strlen($string) > $limit) 
+  {
+    return substr($string, 0, $limit) . $repl; 
+  }
+  else 
+  {
+    return $string;
   }
 }

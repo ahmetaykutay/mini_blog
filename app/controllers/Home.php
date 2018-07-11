@@ -2,15 +2,13 @@
 
 namespace App\Controller;
 
-class Home
+use Core\Controller;
+
+class Home extends Controller
 {
 
   public function index()
   {
-    if (isset( $_SESSION['user'] )) {
-      load_view('home');
-    } else {
-      load_view('auth');
-    }
+    $this->load_view('home/index');
   }
 }

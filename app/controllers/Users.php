@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Model\User;
+use Core\Controller;
 
-class Users
+class Users extends Controller
 {
 
   public function index()
@@ -15,8 +16,7 @@ class Users
   public function login()
   {
     if ($_POST['userName'] == '' or $_POST['password'] == '') {
-      $_SESSION['message_error'] = 'please fill all fields';
-      header('Location: ' . $_SERVER['HTTP_REFERER']);
+      $this->send_back_msg('please fill all fields', 'error');
     }
 
     $user_name = $_POST['userName'];
@@ -30,17 +30,11 @@ class Users
         'user_name' => $user['user_name'],
         'email' => $user['email']
       );
-      $_SESSION['message'] = array(
-        'text' => 'login sucessfull',
-        'type' => 'success'
-      );
+
+      $this->send_back_msg('login sucessfull');
     } else {
-      $_SESSION['message'] = array(
-        'text' => 'login failed',
-        'type' => 'error'
-      );
+      $this->send_back_msg('login failed', 'error');
     }
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
   }
 
   public function logout()
