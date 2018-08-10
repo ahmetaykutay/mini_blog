@@ -54,7 +54,8 @@ class Article
     articles.created_at,
     users.id as user_id,
     users.user_name as author_name
-    FROM articles JOIN users On articles.author=users.id;";
+    FROM articles JOIN users On articles.author=users.id
+    ORDER BY created_at DESC;";
 
     if ($limit > 0) {
       $sql += "LIMIT $limit";
