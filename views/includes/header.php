@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" /> -->
+  <link rel="stylesheet" type="text/css" media="screen" href="<?php echo BASE_URL ?>public/css/main.css" />
 
   <!-- for development -->
-  <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:8888/public/css/main.css" />
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:8888/public/css/main.css" /> -->
 
 </head>
 <body>
