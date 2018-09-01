@@ -15,15 +15,19 @@ class Users extends Controller
 
   public function login()
   {
+    // check if password or user name is empty
     if ($_POST['userName'] == '' or $_POST['password'] == '') {
       $this->send_back_msg('please fill all fields', 'error');
     }
 
+    // get username and password
     $user_name = $_POST['userName'];
     $password = $_POST['password'];
 
+    // fetch user from DB
     $user = User::get_by_user_name($user_name);
 
+    // verify password
     if (password_verify($password, $user['password'])) {
       $_SESSION['user'] = array(
         'id' => $user['id'],
